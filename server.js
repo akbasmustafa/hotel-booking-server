@@ -15,6 +15,21 @@ app.get("/", function (request, response) {
 });
 
 // TODO add your routes and helper functions here
+app.get("/bookings", function (request, response) {
+  response.json(bookings);
+});
+
+app.get("/bookings/:id", function (request, response) {
+  const foundItem = bookings.filter(
+    (item) => item.id === parseInt(request.params.id)
+  );
+  if (foundItem.length > 0) {
+    response.json(foundItem);
+  } else {
+    response.sendStatus(404);
+  }
+});
+
 app.delete("/:id", function (request, response) {
   let isDeleted = false;
   bookings.forEach((item, index) => {

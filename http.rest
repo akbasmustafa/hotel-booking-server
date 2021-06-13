@@ -2,7 +2,7 @@ GET http://localhost:5000
 ###
 DELETE http://localhost:5000/4
 ###
-GET http://localhost:5000/products/all
+GET http://localhost:5000/bookings
 ###
 POST http://localhost:5000/add
 Content-Type: application/json
